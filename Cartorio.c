@@ -58,7 +58,6 @@ int registro()
 	file = fopen(arquivo, "a");
 	fprintf(file, ",");
 	fclose(file);
-
 }
 
 int consultar()
@@ -84,14 +83,12 @@ int consultar()
 		printf("Essas são as informações do usuário:\n");
 		printf("%s", conteudo);
 		printf("\n\n");
-	}
-	
+	}	
 	system("pause");
 }
 
 int deletar()
 {
-
 	char cpf[30];
 
 	printf("Escolha o CPF a ser deletado: ");
@@ -114,16 +111,13 @@ int deletar()
 		printf("CPF deletado com sucesso!\n");
 		system("pause");
 	}
-
 }
 
 int main()
 {
-
-	int opcao=0; //Definindo variáveis.
-	
+	int opcao=0; //Definindo variáveis.	
 	int laco=1;
-
+	
 	for (laco=1;laco=1;)
 	{
 		system("cls");
@@ -134,15 +128,15 @@ int main()
 		printf("Escolha a opção desejada:\n\n");
 		printf("\t1 - Registrar nome.\n");
 		printf("\t2 - Consultar nome.\n");
-		printf("\t3 - Deletar nome.\n\n");
+		printf("\t3 - Deletar nome.\n");
+		printf("\t4 - Sair do sistema.\n\n");
 		printf("Opção: "); //Fim do menu
 		
 		scanf("%d", &opcao); //Armazenando a escolha do usuário.
 		
 		system("cls");
 			
-		switch(opcao)
-		
+		switch(opcao)	
 		{
 			case 1:
 			registro();
@@ -156,11 +150,15 @@ int main()
 			deletar();
 			break;
 		
+			case 4:
+			printf("Obrigado por usar o sistema!\n");
+			return 0;
+			break;	
+		
 			default:
 			printf("Essa opção não existe!\n");
 			system("pause");
 			break;
-		}
-			
+		}			
 	}
 }
